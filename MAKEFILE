@@ -1,0 +1,14 @@
+all:	sound.exe
+
+lib=q:lib			# location of setargv.obj
+
+sound.obj:	sound.c
+	cl -Ox -AL -c sound.c
+
+play.obj:	play.asm
+	masm -mx play;
+
+sound.exe:	sound.obj play.obj
+	cl -Lp -AL $** $(lib)\setargv.obj sound.def os2.lib -link /pmtype:vio /noe
+
+

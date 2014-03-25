@@ -1,0 +1,7 @@
+NAME	sound.exe
+protmode
+segments	PLAY_TEXT	CLASS 'CODE' IOPL
+
+exports
+	PLAY	4
+
